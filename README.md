@@ -1,1 +1,1 @@
-# Pennsieve-Demo-ICTALS-2025-
+# Pennsieve Demo (ICTALS 2025)
