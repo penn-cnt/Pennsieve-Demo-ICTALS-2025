@@ -16,3 +16,4 @@ plotly>=5.18.0
 openpyxl>=3.0.0
 nilearn>=0.10.0
 pingouin>=0.5.5
+python-dotenv>=1.1.0

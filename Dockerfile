@@ -6,6 +6,8 @@ RUN apt clean && apt-get update
 
 COPY . .
 
+COPY .env.example .env
+
 RUN ls /service
 
 RUN mkdir -p data

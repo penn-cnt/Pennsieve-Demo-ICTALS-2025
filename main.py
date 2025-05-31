@@ -15,6 +15,7 @@ from typing import Optional, Tuple
 import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
+from dotenv import load_dotenv
 
 from sklearn.preprocessing import label_binarize
 from sklearn.pipeline import Pipeline, make_pipeline
@@ -25,6 +26,8 @@ from sklearn.multiclass import OneVsRestClassifier
 from sklearn.model_selection import KFold, cross_val_predict
 from sklearn.metrics import roc_curve, auc
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+
+load_dotenv()
 
 #%%
 class T1MRIHarmonizer:
@@ -464,7 +467,7 @@ class T1MRIHarmonizer:
 if __name__ == "__main__":
 
     # project_path = Path(__file__).parent.parent
-    src = os.environ['INPUT_DIR']
+    src = os.getenv('INPUT_DIR')
  
     metadata_path = f'{src}/metadata.csv'
     roi_volume_path = f'{src}/roi_volume.csv'
@@ -485,7 +488,7 @@ if __name__ == "__main__":
     #%% Process data
     t1mri = T1MRIHarmonizer(roi_volume, metadata)
 
-    dest = os.environ['OUTPUT_DIR']
+    dest = os.getenv('OUTPUT_DIR')
     save_path = dest
 
     print('a')
